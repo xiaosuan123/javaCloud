@@ -1,0 +1,14 @@
+# 配置服务器端口
+server:
+  port: 10086
+
+# Spring应用名称配置
+spring:
+  application:
+    name: eureka-server # 设置应用名称为eureka-server
+
+# Eureka客户端配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka # 指定Eureka服务器的地址，用于客户端注册和发现服务
