@@ -11,13 +11,19 @@
         <module name="user-service" />
         <module name="eureka-server" />
         <module name="feign-api" />
+        <module name="getaway" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="gateway" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="eureka-server" options="-parameters" />
       <module name="feign-api" options="-parameters" />
+      <module name="gateway" options="-parameters" />
+      <module name="getaway" options="-parameters" />
       <module name="order-service" options="-parameters" />
       <module name="user-service" options="-parameters" />
     </option>
