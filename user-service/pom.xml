@@ -26,10 +26,16 @@
             <artifactId>mybatis-spring-boot-starter</artifactId>
         </dependency>
         <!-- 定义了Spring Cloud项目对Eureka服务器的支持 -->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>-->
+<!--        </dependency>-->
+        <!-- 定义了对阿里巴巴云的依赖项，用于整合Spring Cloud Alibaba -->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
+
     </dependencies>
     <build>
         <finalName>app</finalName>
