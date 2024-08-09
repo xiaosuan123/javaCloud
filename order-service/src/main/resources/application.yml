@@ -32,3 +32,27 @@ logging:
       userservice:
         ribbon:
           NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
+
+    feign:
+      client:
+        config:
+          #这里用default就是全局配置，如果是写服务名称，则是针对某个微服务的配置
+          default:
+          #针对某个微服务的配置
+#          userservice:
+            #  日志级别
+            #  NONE,BASIC,HEADERS,FULL
+#            NONE：不记录任何日志信息，这是默认值。
+#            BASIC：仅记录请求的方法，URL以及响应状态码和执行时间
+#            HEADERS：在BASIC的基础上，额外记录了请求和响应的头信息
+#            FULL：记录所有请求和响应的明细，包括头信息、请求体、元数据。
+            logLevel: full
+    # 配置HTTP客户端的属性
+    httpclient:
+      # 启用HTTP客户端功能
+      enabled: true
+      # 设置最大连接数，用于控制并发连接的数量，避免过多的连接导致资源耗尽
+      max-connections: 200
+      # 设置每个路由的最大连接数，用于均衡连接数，防止某个路由上的连接过多
+      max-connections-per-route: 50
+

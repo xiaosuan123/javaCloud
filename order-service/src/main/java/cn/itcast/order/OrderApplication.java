@@ -1,5 +1,8 @@
 package cn.itcast.order;
 
+
+import cn.itcast.demo.service.UserClient;
+import org.apache.catalina.startup.UserConfig;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 
 @MapperScan("cn.itcast.order.mapper")
 @SpringBootApplication
-@EnableFeignClients//开启Feign的功能
+@EnableFeignClients(clients = {UserClient.class})//开启Feign的功能
 public class OrderApplication {
 
     public static void main(String[] args) {
