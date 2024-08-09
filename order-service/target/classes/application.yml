@@ -17,7 +17,18 @@ logging:
     cn.itcast: debug
   pattern:
     dateformat: MM-dd HH:mm:ss:SSS
-eureka:
-  client:
-    service-url:
-      defaultZone: http://127.0.0.1:10086/eureka
+  #eureka:
+  #  client:
+  #    service-url:
+  #      defaultZone: http://127.0.0.1:10086/eureka
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      discovery:
+        cluster-name: HZ
+        namespace: f5742fc5-4d04-4d0e-8bcc-1a08d67c4536
+        ephemeral: false
+      # 其他 discovery 相关配置
+      userservice:
+        ribbon:
+          NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule

@@ -27,7 +27,6 @@ logging:
     nacos:
       server-addr: localhost:8848
       discovery:
-        ##namespace ID: 213887e0-d8dc-432e-987c-b85eb457c6b7
         namespace: 213887e0-d8dc-432e-987c-b85eb457c6b7
         # Nacos 集群名称
         cluster-name: HZ

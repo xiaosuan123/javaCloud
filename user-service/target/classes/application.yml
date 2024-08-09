@@ -18,7 +18,15 @@ logging:
   pattern:
     dateformat: MM-dd HH:mm:ss:SSS
 # Eureka客户端配置
-eureka:
-  client:
-    service-url:
-      defaultZone: http://127.0.0.1:10086/eureka # 指定Eureka服务器的地址，用于客户端注册和发现服务
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://127.0.0.1:10086/eureka # 指定Eureka服务器的地址，用于客户端注册和发现服务
+
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      discovery:
+        namespace: 213887e0-d8dc-432e-987c-b85eb457c6b7
+        # Nacos 集群名称
+        cluster-name: HZ
