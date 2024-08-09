@@ -31,9 +31,12 @@ public class UserController {
     /**
      * 路径： /user/110
      *
-     * @param id 用户id
      * @return 用户
      */
+    @GetMapping("prop")
+    public PatternProperties prop() {
+        return patternProperties;
+    }
     @GetMapping("/{id}")
     public User queryById(@PathVariable("id") Long id) {
         return userService.queryById(id);

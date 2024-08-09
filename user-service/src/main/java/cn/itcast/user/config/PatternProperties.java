@@ -17,4 +17,8 @@ public class PatternProperties {
      * 这个属性用于指定日期的格式，以便在应用程序中统一管理日期的显示和处理
      */
     private String dateformat;
+    /**
+     * 共享属性值
+     */
+    private String envSharedValve;
 }

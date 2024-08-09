@@ -14,6 +14,8 @@ public class OrderService {
     private OrderMapper orderMapper;
     @Autowired
     private RestTemplate restTemplate;
+    @Autowired
+    private UserClient userClient;
 
     /**
      * 根据订单ID查询订单详情
@@ -26,10 +28,11 @@ public class OrderService {
         // 通过订单ID查询订单基本信息
         Order order = orderMapper.findById(orderId);
         // 构建查询用户信息的URL，根据订单中的用户ID
-        String url = "http://orderservice/user/" + order.getUserId();
+        //String url = "http://orderservice/user/" + order.getUserId();
 
-        // 调用用户服务，查询用户信息，并将其设置到订单对象中
-        User user = restTemplate.getForObject(url, User.class);
+        // 调用用户服务，查询用户信息
+       // User user = restTemplate.getForObject(url, User.class);
+        User user = userClient.findById(order.getUserId());
         order.setUser(user);
 
         // 返回包含用户信息的订单对象
